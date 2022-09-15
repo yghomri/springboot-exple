@@ -42,7 +42,7 @@ public class DemoApplication {
 
         // With Spring Data. Load the bean and get the implementation of interface
         ProduitRepository produitRepository = ctx.getBean(ProduitRepository.class);
-        ProduitRepository categoryRepository = ctx.getBean(CategoryRepository.class);
+        CategoryRepository categoryRepository = ctx.getBean(CategoryRepository.class);
 
         Category c1 = new Category("Laptop");
         Category c2 = new Category("Printer");
@@ -51,7 +51,6 @@ public class DemoApplication {
         categoryRepository.save(c1);
         categoryRepository.save(c2);
         categoryRepository.save(c3);
-        //categoryRepository.saveAll(c1, c2, c3);
 
         produitRepository.save(new Produit("LX 4", 400, 4, c1));
         produitRepository.save(new Produit("PX 5", 500, 5, c1));
@@ -69,6 +68,8 @@ public class DemoApplication {
             System.out.println("Id: " + produit.getId());
             System.out.println("Des: " + produit.getDesignation());
             System.out.println("price: " + produit.getPrix());
+            System.out.println("category name: " + produit.getCategory().getCategoryName());
+            System.out.println("category id: " + produit.getCategory().getId());
         }
     }
 }
