@@ -19,7 +19,7 @@ public class DemoApplication {
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
 
-        /** With JPA - No Spring Data **/
+        // With JPA - No Spring Data
         EntityRepository<Produit> produitDao = ctx.getBean(EntityRepository.class);
         produitDao.save(new Produit("LX 456", 8000, 7));
         produitDao.save(new Produit("HP 654", 500, 8));

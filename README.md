@@ -1,2 +1,3 @@
-# springboot-exple
-This is example of Spring Boot app with JPA (no Spring Data)
+
+# This is example of Spring Boot app
+Comparison between using Hibernate JPA and Spring Data
